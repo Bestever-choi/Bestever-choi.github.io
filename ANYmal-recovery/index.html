@@ -193,77 +193,48 @@ function seek(sec){
 
 <body>
       <br>
-      <center><span style="font-size:44px;font-weight:bold;">Towards Practical Multi-object Manipulation using<br />Relational Reinforcement Learning</span></center><br/>
+      <center><span style="font-size:44px;font-weight:bold;">Recovery controller for ANYmal on various terrains</span></center><br/>
       <table align=center width=600px>
       <tr>
         <td align=center width=150px>
-        <center><span style="font-size:22px"><a href="https://richardrl.github.io/" target="_blank">Richard Li</a></span></center></td>
+        <center><span style="font-size:22px"><a href="https://wenlong.page/" target="_blank">Kyoungyeon Choi</a></span></center></td>
         <td align=center width=150px>
         <center><span style="font-size:22px"><a href="https://ajabri.github.io/" target="_blank">Allan Jabri</a></span></center></td>
-        <td align=center width=150px>
-        <center><span style="font-size:22px"><a href="https://people.eecs.berkeley.edu/~trevor/" target="_blank">Trevor Darrell</a></span></center></td>
-        <td align=center width=150px>
-        <center><span style="font-size:22px"><a href="http://people.csail.mit.edu/pulkitag/" target="_blank">Pulkit Agrawal</a></span></center></td>
       <tr/>
       <tr>
         <td align=center width=200px>
-        <center><span style="font-size:20px">UC Berkeley, MIT</span></center></td>
+        <center><span style="font-size:20px">ETH Zurich, SNU</span></center></td>
         <td align=center width=200px>
         <center><span style="font-size:20px">UC Berkeley</span></center></td>
-        <td align=center width=200px>
-        <center><span style="font-size:20px">UC Berkeley</span></center></td>
-        <td align=center width=200px>
-        <center><span style="font-size:20px">MIT</span></center></td>
       <tr/>
       </table>
 
-      <table align=center width=700px>
-          <tr>
-            <td align=center width=700px><center><span style="font-size:22px">ICRA 2020</a></span></center></td>
-          <tr/>
-      </table>
 
       <table align=center width=700px>
           <tr>
-            <td align=center width=200px><center><span style="font-size:22px"><a href="https://arxiv.org/pdf/1912.11032.pdf">[Download Paper]</a></span></center></td>
-            <td align=center width=200px><center><span style="font-size:22px"><a href='https://github.com/richardrl/rlkit-relational'>[GitHub Code]</a></span></center></td>
+            <td align=center width=200px><center><span style="font-size:22px"><a href="data/FinalReport.pdf">[Report]</a></span></center></td>
+            <td align=center width=200px><center><span style="font-size:22px"><a href='data/RSL Presentation Kyoungyeon_Final.pdf'>[Presentation]</a></span></center></td>
+            <td align=center width=200px><center><span style="font-size:22px"><a href="https://youtu.be/yt3woILwwhY" target="_blank">[Video]</a></span></center></td>
           <tr/>
       </table><br/>
 
-      <table align=center width=300px>
-      <tr><td align=center width=300px>
-      <iframe width="768" height="512" src="https://www.youtube.com/embed/rW1HTX0VA10" frameborder="0" allowfullscreen></iframe>
-      </td></tr>
-      </table>
 <!--       <br>
  -->
       <div style="width:800px; margin:0 auto; text-align=center">
       <br />
       Section Timestamps
-      <ul style="margin-top: 0px;">
-        <li>0:00 Intro</li>
-        <li>0:40 Our method learning to stack 6 blocks</li>
-        <li>0:54 Zero-shot generalization results</li>
-        <li>1:27 Emergent behaviors</li>
-        <li>2:06 Failure modes</li>
-      </ul>
-        Reinforcement learning algorithms require an exorbitant number of interactions to learn from sparse rewards. 
-        To overcome this sample inefficiency, we present a simple but effective method for learning from a curriculum of increasing number of objects. We show that attention-based graph neural networks provide critical inductive biases that enable usage of this task curriculum. Our agent achieves a success rate of 75% for 
-        stacking 6 blocks, while the existing state-of-the-art method, which uses human demonstrations and resets, 
-        only achieves a success rate of 32%. Our method is also orders of magnitude more sample efficient. 
+      Legged robots have promising capabilities of traversing and performing tasks in challenging environments. However, unexpected disturbances can easily lead the robot to fall in such harsh environments. Therefore, it is essential to recover from a fall in various terrains and stabilize itself. There are existing model-based control methods for recovery, but they are based on analytical models and often require predefined contact points that are difficult to optimize. Even on simple flat terrain environments, it is almost impossible to model all the contact sequences and the interactions with the ground. To deal with the complexity of the task, we use modelfree Deep Reinforcement Learning to obtain a robust recovery controller on various terrains. We trained the policy in simulated environments and transferred it to real systems. 
       </div>
       <br><hr>
 
-      <center><h1>Zero-shot Generalization</h1></center>
+      <center><h1>ANYmal recovery on sloped terrains</h1></center>
       <div style="width:800px; margin:0 auto; text-align=center">
-        We show zero-shot generalization to different block configurations and block cardinalities. Our system can stack blocks 
-        into taller towers, multiple towers and pyramids without additional training. While these results are exciting, 
-        we acknowledge there is substantial room for improving the zero-shot results.   
+      The contributions of this project can be divided into 4 parts. 1) Design of a recovery controller on sloped terrain. We train the recovery policy using PPO(Proximal Policy Optimization) on sloped terrain with randomized properties(slope, friction coefficient). 2) Terrain normal vector estimation. For stable behaviors, we find that terrain normal observation is crucial during recovery on sloped terrain. Therefore, a terrain normal estimator is trained using deep neural network. 3) Design of a standing up controller on sloped terrain. After recovery, the robot has to stand up to walk and perform various tasks. With different reward function from the recovery controller, we train a standing up policy. 4) Finite state machine. Finite state machine that enables hybrid control of the two previous policies(recovery, standing up) is designed by transition rules based on state errors. The policy is tested on the quadrupedal robot ANYmal in both simulated and physical environments.
       </div><br/>
       <table align=center width=1000px>
         <p style="margin-top:4px;"></p>
         <tr><td width=1200px>
-          <center><a href="resources/generalization.png"><img src = "resources/generalization.png" height="500px"></img></a><br></center>
+          <center><a href="data/merge.gif"><img src = "data/merge.gif" height="150px"></img></a><br></center>
         </td></tr>
       </table>
 
@@ -353,62 +324,6 @@ Your browser does not support the video tag.
       </div>
     <br/><hr>
 
-
-      <center id="sourceCode"><h1>Source Code and Environment</h1></center>
-      <div style="width:800px; margin:0 auto; text-align=center">
-      We have released the PyTorch based implementation and environment on the Github page. Try our code!
-      </div>
-      <table align=center width=900px>
-        <tr>
-          <!-- <p style="margin-top:4px;"></p> -->
-          <td width=300px align=center>
-            <span style="font-size:28px"><a href='https://github.com/richardrl/rlkit-relational'>[GitHub]</a></span>
-          </td>
-        </tr>
-      </table>
-      <br><hr>
-
-      <table align=center width=850px>
-        <center><h1>Paper and Bibtex</h1></center>
-        <tr>
-        <td width=250px align=left>
-        <!-- <p style="margin-top:4px;"></p> -->
-        <a href="resources/assemblies.pdf"><img style="height:150px" src="resources/ICRA_PAPER_RICHARD.pdf.jpg"/></a>
-        <center>
-        <span style="font-size:20pt"><a href="https://arxiv.org/pdf/1912.11032.pdf">[Paper]</a>&nbsp;
-        <span style="font-size:20pt"><a href="https://arxiv.org/pdf/1912.11032.pdf">[ArXiv]</a>
-        </center>
-        </td>
-        <td width=50px align=center>
-        </td>
-        <td width=550px align=left>
-        <!-- <p style="margin-top:4px;"></p> -->
-        <p style="text-align:left;"><b><span style="font-size:20pt">Citation</span></b><br/><span style="font-size:6px;">&nbsp;<br/></span> <span style="font-size:15pt">Richard Li, Allan Jabri, Trevor Darrell, Pulkit Agrawal. <b>Towards Practical Multi-object Manipulation using Relational Reinforcement Learning.<br/></b> In <i>ICRA</i> 2020.</span></p>
-        <!-- <p style="margin-top:20px;"></p> -->
-        <span style="font-size:20pt"><a shape="rect" href="javascript:togglebib('relationalrl19_bib')" class="togglebib">[Bibtex]</a></span>
-        </td>
-        </tr>
-        <tr>
-        <td width=250px align=left>
-        </td>
-        <td width=50px align=center>
-        </td>
-        <td width=550px align=left>
-
-          <div class="paper" id="relationalrl19_bib">
-<pre xml:space="preserve">
-@inproceedings{li19relationalrl,
-  Author = {Li, Richard and
-  Jabri, Allan and Darrell, Trevor and Agrawal, Pulkit},
-  Title = {Towards Practical Multi-object Manipulation using Relational Reinforcement Learning},
-  Booktitle = {arXiv preprint arXiv:XXXX},
-  Year = {2019}
-}</pre>
-          </div>
-          </td>
-          </tr>
-      </table>
-    <br><hr>
 
 <!--     <table align=center width=800px>
       <tr><td width=800px><left> -->
