@@ -215,6 +215,19 @@
       <br>
 
       <div style="width:800px; margin:0 auto; text-align=right;">
+      Legged robots have promising capabilities of traversing and performing tasks in
+      challenging environments. However, unexpected disturbances can easily lead the
+      robot to fall in such harsh environments. Therefore, it is essential to recover from
+      a fall in various terrains and stabilize itself. There are existing model-based control
+      methods for recovery, but they are based on analytical models and often require
+      predefined contact points that are difficult to optimize. Even on simple flat terrain environments, it is almost impossible to model all the contact sequences and
+      the interactions with the ground. To deal with the complexity of the task, we use modelfree Deep Reinforcement Learning to obtain a robust recovery controller on various
+      terrains. We trained the policy in simulated environments and transferred it to real systems. 
+      </div>
+      <br><hr>
+
+      <center><h1>ANYmal recovery on sloped terrains</h1></center>
+      <div style="width:800px; margin:0 auto; text-align=right">
       The contributions of this project can be divided into 4 parts. 1) Design of a recovery controller on sloped terrain. We train the recovery policy using PPO(Proximal
       Policy Optimization) on sloped terrain with randomized properties(slope, friction
       coecient). 2) Terrain normal vector estimation. For stable behaviors, we find that
@@ -226,15 +239,10 @@
       up) is designed by transition rules based on state errors. The policy is tested on
       the quadrupedal robot ANYmal in both simulated and physical environments.
       </div>
-      <br><hr>
-
-      <center><h1>ANYmal recovery on sloped terrains</h1></center>
-      <div style="width:800px; margin:0 auto; text-align=right">
-        This work takes a step beyond the laborious training process of the conventional single-agent RL policy by tackling the possibility of learning general-purpose controllers for diverse robotic systems. Our approach leverages the compositional graph neural networks and trains a single policy for a wide variety of agents which can then generalize to unseen agent shapes at test-time without any further training.
-      </div>
       <table align="center" width="800px"><tbody><tr><td width="800px">
-      <center><a href="data/mergeNorm1.gif"><img src = "data/mergeNorm1.gif" width="300px" ></img></a><br></center>
-       <center><a href="data/mergeNorm1.gif"><img src = "data/mergeNorm2.gif" width="300px" ></img></a><br></center>
+      <center><a href="data/mergeNorm1.gif"><img src = "data/mergeNorm1.gif" width="300px" ></img></a></center>
+       <center><a href="data/mergeNorm1.gif"><img src = "data/mergeNorm2.gif" width="300px" ></img></a></center>
+       <center><a href="data/mergeNorm1.gif"><img src = "data/mergeNorm3.gif" width="300px" ></img></a><br></center>
       </td></tr></tbody></table>
       <hr>
 
