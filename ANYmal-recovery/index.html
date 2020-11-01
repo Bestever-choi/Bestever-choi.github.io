@@ -224,12 +224,12 @@
       The contributions of this project can be divided into 4 parts. 1) Design of a recovery controller on sloped terrain. We train the recovery policy using PPO(Proximal Policy Optimization) on sloped terrain with randomized properties(slope, friction coefficient). 2) Terrain normal vector estimation. For stable behaviors, we find that terrain normal observation is crucial during recovery on sloped terrain. Therefore, a terrain normal estimator is trained using deep neural network. 3) Design of a standing up controller on sloped terrain. After recovery, the robot has to stand up to walk and perform various tasks. With different reward function from the recovery controller, we train a standing up policy. 4) Finite state machine. Finite state machine that enables hybrid control of the two previous policies(recovery, standing up) is designed by transition rules based on state errors. The policy is tested on the quadrupedal robot ANYmal in both simulated and physical environments.
       </div>
  
-        <table align=center width=1000px>
-          <tr><td width=1000px>
-            <center><a href="data/mergeNorm1.gif" style="margin-right:30px"><img src = "data/mergeNorm1.gif" height="200px" border="1" style="border-color:black"></img></a>
-            <a href="data/mergeNorm2.gif" style="margin-left:30px"><img src = "data/mergeNorm2.gif" height="200px" border="1" style="border-color:black"></img></a><br></center>
-          </td></tr>
-        </table>
+     <table align=center width=1000px>
+        <p style="margin-top:4px;"></p>
+        <tr><td width=1000px>
+          <center><a href="data/merge.gif"><img src = "data/merge.gif" height="350px"></img></a><br></center>
+        </td></tr>
+      </table>
       <br>
       <hr>
 
