@@ -1,127 +1,428 @@
-<!DOCTYPE HTML>
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
 
-  <title>Kyoungyeon Choi</title>
-  
-  <meta name="author" content="Kyoungyeon Choi">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <link rel="stylesheet" type="text/css" href="stylesheet.css">
-  <link rel="icon" type="image/png" href="images/seal_icon.png">
+<!-- template from Deepak Pathak https://people.eecs.berkeley.edu/~pathak/ -->
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">google.load("jquery", "1.3.2");</script>
+<style type="text/css">
+  body {
+    font-family: "Titillium Web","HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight:300;
+    font-size:18px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1100px;
+  }
+
+  h1 {
+    font-weight:300;
+  }
+
+  .disclaimerbox {
+    background-color: #eee;
+    border: 1px solid #eeeeee;
+    border-radius: 10px ;
+    -moz-border-radius: 10px ;
+    -webkit-border-radius: 10px ;
+    padding: 20px;
+  }
+
+  video.header-vid {
+    height: 140px;
+    border: 1px solid black;
+    border-radius: 10px ;
+    -moz-border-radius: 10px ;
+    -webkit-border-radius: 10px ;
+  }
+
+  img.header-img {
+    height: 140px;
+    border: 1px solid black;
+    border-radius: 10px ;
+    -moz-border-radius: 10px ;
+    -webkit-border-radius: 10px ;
+  }
+
+  img.rounded {
+    border: 1px solid #eeeeee;
+    border-radius: 10px ;
+    -moz-border-radius: 10px ;
+    -webkit-border-radius: 10px ;
+  }
+
+  a:link,a:visited
+  {
+    color: #1367a7;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #208799;
+  }
+
+  td.dl-link {
+    height: 160px;
+    text-align: center;
+    font-size: 22px;
+  }
+
+  .layered-paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+    box-shadow:
+            0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+            5px 5px 0 0px #fff, /* The second layer */
+            5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+            10px 10px 0 0px #fff, /* The third layer */
+            10px 10px 1px 1px rgba(0,0,0,0.35), /* The third layer shadow */
+            15px 15px 0 0px #fff, /* The fourth layer */
+            15px 15px 1px 1px rgba(0,0,0,0.35), /* The fourth layer shadow */
+            20px 20px 0 0px #fff, /* The fifth layer */
+            20px 20px 1px 1px rgba(0,0,0,0.35), /* The fifth layer shadow */
+            25px 25px 0 0px #fff, /* The fifth layer */
+            25px 25px 1px 1px rgba(0,0,0,0.35); /* The fifth layer shadow */
+    margin-left: 10px;
+    margin-right: 45px;
+  }
+
+
+  .layered-paper { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+    box-shadow:
+            0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+            5px 5px 0 0px #fff, /* The second layer */
+            5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+            10px 10px 0 0px #fff, /* The third layer */
+            10px 10px 1px 1px rgba(0,0,0,0.35); /* The third layer shadow */
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-right: 30px;
+    margin-bottom: 5px;
+  }
+
+  .vert-cent {
+    position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+  }
+
+  hr
+  {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+  }
+
+  #authors td {
+    padding-bottom:5px;
+    padding-top:30px;
+  }
+</style>
+
+<script type="text/javascript" src="resources/hidebib.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,600,400italic,600italic,300,300italic' rel='stylesheet' type='text/css'>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link rel="icon" type="image/png" href="resources/seal_icon.png">
+  <title>Towards Practical Multi-object Manipulation using Relational Reinforcement Learning</title>
+  <meta name="HandheldFriendly" content="True" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="canonical" href="https://richardrl.github.io/relational-rl/" />
+  <meta name="referrer" content="no-referrer-when-downgrade" />
+
+  <meta property="og:site_name" content="Relational Reinforcement Learning" />
+  <meta property="og:type" content="video.other" />
+  <meta property="og:title" content="Towards Practical Multi-object Manipulation using Relational Reinforcement Learning" />
+  <meta property="og:description" content="Li, Jabri, Darrell, Agrawal. Towards Practical Multi-object Manipulation using Relational Reinforcement Learning. 2019." />
+  <meta property="og:url" content="https://richardrl.github.io/relational-rl/" />
+  <meta property="og:image" content="https://pathak22.github.io/modular-assemblies/resources/generalization.png" />
+  <meta property="og:video" content="https://www.youtube.com/embed/rW1HTX0VA10" />
+
+  <meta property="article:publisher" content="https://github.com/richardrl/richardrl.github.io/" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Towards Practical Multi-object Manipulation using Relational Reinforcement Learning" />
+  <meta name="twitter:description" content="Li, Jabri, Darrell, Agrawal. Towards Practical Multi-object Manipulation using Relational Reinforcement Learning. 2019." />
+  <meta name="twitter:url" content="https://richardrl.github.io/relational-rl/" />
+  <meta name="twitter:image" content="https://richardrl.github.io/relational-rl/resources/teaser.jpg" />
+  <meta name="twitter:label1" content="Written by" />
+  <meta name="twitter:data1" content="Richard Li" />
+  <meta name="twitter:label2" content="Filed under" />
+  <meta name="twitter:data2" content="" />
+  <meta name="twitter:site" content="@richardli" />
+  <meta property="og:image:width" content="1600" />
+  <meta property="og:image:height" content="900" />
+
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <meta name="twitter:card" content="player" />
+  <meta name="twitter:image" content="https://richardrl.github.io/relational-rl/resources/teaser.jpg" />
+  <meta name="twitter:player" content="https://www.youtube.com/embed/rW1HTX0VA10" />
+  <meta name="twitter:player:width" content="640" />
+  <meta name="twitter:player:height" content="360" />
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-89486716-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-89486716-2');
+</script>
+<!-- 
+<script>
+var player, seconds = 0;
+function onYouTubeIframeAPIReady() {
+    console.log("player");
+    player = new YT.Player('yt-embed', {
+        events: {
+          'onReady': onPlayerReady
+        }
+      });
+}
+
+function onPlayerReady(event) {
+    event.target.playVideo();
+}
+
+
+function seek(sec){
+    if(player){
+        seconds += sec;
+        player.seekTo(seconds, true);
+    }
+}</script>
+ -->
 </head>
 
 <body>
-  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-    <tr style="padding:0px">
-      <td style="padding:0px">
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr style="padding:0px">
-            <td style="padding:2.5%;width:63%;vertical-align:middle">
-              <p style="text-align:center">
-                <name>ANYmal Recovery</name>
-              </p>
-              <p>I am a senior student majoring Mechanical Engineering at Seoul National University, South Korea. I am interested in robotics, robotic manipulation, legged robotics and reinforcement learning.
-              </p>
-              <p style="text-align:center">
-                <a href="mailto:kenbaxter1221@gmail.com">Email</a> &nbsp/&nbsp
-                <a href="data/Kyoungyeon-CV.pdf">CV</a> &nbsp/&nbsp
-                <a href="https://scholar.google.com/citations?hl=en&user=o3gRfSUAAAAJ&view_op=list_works&gmla=AJsN-F6MS7CsPZJpD2vsmjxwhowfFLVsGDGmIs7_5YzFuBd5U4n-VIT4tTcbYAL4jfzm6O5bMnY3wNS2nOZhgFkS3pfTHV750RQsiIoTa1dCwekSys-JHs4">Google Scholar</a>
-              </p>
-            </td>
-            <td style="padding:2.5%;width:40%;max-width:40%">
-              <a href="images/JonBarron.jpg"><img style="width:100%;max-width:100%" alt="profile photo" src="images/JonBarron_circle.jpg" class="hoverZoomLink"></a>
-            </td>
-          </tr>
-        </tbody></table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-            <td style="padding:20px;width:100%;vertical-align:middle">
-              <heading>Research</heading>
-              <p>
-                I'm interested in computer vision, machine learning, optimization, and image processing.
-                Much of my research is about inferring the physical world (shape, motion, color, light, etc) from images.
-                Representative papers are <span class="highlight">highlighted</span>.
-              </p>
-            </td>
-          </tr>
-        </tbody></table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+      <br>
+      <center><span style="font-size:44px;font-weight:bold;">Towards Practical Multi-object Manipulation using<br />Relational Reinforcement Learning</span></center><br/>
+      <table align=center width=600px>
+      <tr>
+        <td align=center width=150px>
+        <center><span style="font-size:22px"><a href="https://richardrl.github.io/" target="_blank">Richard Li</a></span></center></td>
+        <td align=center width=150px>
+        <center><span style="font-size:22px"><a href="https://ajabri.github.io/" target="_blank">Allan Jabri</a></span></center></td>
+        <td align=center width=150px>
+        <center><span style="font-size:22px"><a href="https://people.eecs.berkeley.edu/~trevor/" target="_blank">Trevor Darrell</a></span></center></td>
+        <td align=center width=150px>
+        <center><span style="font-size:22px"><a href="http://people.csail.mit.edu/pulkitag/" target="_blank">Pulkit Agrawal</a></span></center></td>
+      <tr/>
+      <tr>
+        <td align=center width=200px>
+        <center><span style="font-size:20px">UC Berkeley, MIT</span></center></td>
+        <td align=center width=200px>
+        <center><span style="font-size:20px">UC Berkeley</span></center></td>
+        <td align=center width=200px>
+        <center><span style="font-size:20px">UC Berkeley</span></center></td>
+        <td align=center width=200px>
+        <center><span style="font-size:20px">MIT</span></center></td>
+      <tr/>
+      </table>
 
-
-          <tr onmouseout="lssr_stop()" onmouseover="lssr_start()">
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <div class="one">
-                <div class="two" id='lssr_image'>
-                  <img src='images/lssr_after.jpg' width="160"></div>
-                <img src='images/lssr_before.jpg' width="160">
-              </div>
-              <script type="text/javascript">
-                function lssr_start() {
-                  document.getElementById('lssr_image').style.opacity = "1";
-                }
-
-                function lssr_stop() {
-                  document.getElementById('lssr_image').style.opacity = "0";
-                }
-                lssr_stop()
-              </script>
-            </td>
-            <td style="padding:20px;width:75%;vertical-align:middle">
-              <a href="https://arxiv.org/abs/2010.08888">
-                <papertitle>Light Stage Super-Resolution: Continuous High-Frequency Relighting</papertitle>
-              </a>
-              <br>
-              <a href="http://kevinkingo.com/">Tiancheng Sun</a>,
-              <a href="https://cseweb.ucsd.edu/~zex014/">Zexiang Xu</a>
-              <a href="http://people.csail.mit.edu/xiuming/">Xiuming Zhang</a>,
-              <a href="http://www.seanfanello.it/">Sean Fanello</a>,
-              <a href="https://scholar.google.com/citations?user=5D0_pjcAAAAJ&hl=en">Christoph Rhemann</a>,
-              <a href="https://www.pauldebevec.com/">Paul Debevec</a>,
-              <a href="https://research.google/people/105312/">Yun-Ta Tsai</a>,
-              <strong>Jonathan T. Barron</strong>,
-              <a href="https://cseweb.ucsd.edu/~ravir/">Ravi Ramamoorthi</a>
-              <br>
-              <em>SIGGRAPH Asia</em>, 2020  
-              <br>
-              <a href="https://arxiv.org/abs/2010.08888">arXiv</a>
-              <p></p>
-              <p>
-                Scans for light stages are inherently aliased, but we can use learning to super-resolve them.
-              </p>
-            </td>
-          </tr> 
-
+      <table align=center width=700px>
           <tr>
-            <td style="padding:20px;width:25%;vertical-align:middle">
-              <img src="images/clean_promo.jpg" alt="clean-usnob" width="160" height="160">
-            </td>
-            <td width="75%" valign="middle">
-              <a href="https://drive.google.com/file/d/1YvRx-4hrZoCk-nl6OgVJZlHAqOiN5hWq/view?usp=sharing">
-                <papertitle>Cleaning the USNO-B Catalog Through Automatic Detection of Optical Artifacts</papertitle>
-              </a>
-              <br>
-              <strong>Jonathan T. Barron</strong>, <a href="http://stumm.ca/">Christopher Stumm</a>, <a href="http://cosmo.nyu.edu/hogg/">David W. Hogg</a>, <a href="http://www.astro.princeton.edu/~dstn/">Dustin Lang</a>, <a href="http://cs.nyu.edu/~roweis/">Sam Roweis</a>
-              <br>
-              <em>The Astronomical Journal</em>, 135, 2008
-              <p>We use computer vision techniques to identify and remove diffraction spikes and reflection halos in the USNO-B Catalog.</p>
-              <p>In use at <a href="http://www.astrometry.net">Astrometry.net</a></p>
-            </td>
-          </tr>
-          
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <td align=center width=700px><center><span style="font-size:22px">ICRA 2020</a></span></center></td>
+          <tr/>
+      </table>
+
+      <table align=center width=700px>
           <tr>
-            <td style="padding:0px">
-              <br>
-              <p style="text-align:right;font-size:small;">
-              <a href="https://github.com/jonbarron/jonbarron_website">Template</a>
-                <br>
-              </p>
-            </td>
+            <td align=center width=200px><center><span style="font-size:22px"><a href="https://arxiv.org/pdf/1912.11032.pdf">[Download Paper]</a></span></center></td>
+            <td align=center width=200px><center><span style="font-size:22px"><a href='https://github.com/richardrl/rlkit-relational'>[GitHub Code]</a></span></center></td>
+          <tr/>
+      </table><br/>
+
+      <table align=center width=300px>
+      <tr><td align=center width=300px>
+      <iframe width="768" height="512" src="https://www.youtube.com/embed/rW1HTX0VA10" frameborder="0" allowfullscreen></iframe>
+      </td></tr>
+      </table>
+<!--       <br>
+ -->
+      <div style="width:800px; margin:0 auto; text-align=center">
+      <br />
+      Section Timestamps
+      <ul style="margin-top: 0px;">
+        <li>0:00 Intro</li>
+        <li>0:40 Our method learning to stack 6 blocks</li>
+        <li>0:54 Zero-shot generalization results</li>
+        <li>1:27 Emergent behaviors</li>
+        <li>2:06 Failure modes</li>
+      </ul>
+        Reinforcement learning algorithms require an exorbitant number of interactions to learn from sparse rewards. 
+        To overcome this sample inefficiency, we present a simple but effective method for learning from a curriculum of increasing number of objects. We show that attention-based graph neural networks provide critical inductive biases that enable usage of this task curriculum. Our agent achieves a success rate of 75% for 
+        stacking 6 blocks, while the existing state-of-the-art method, which uses human demonstrations and resets, 
+        only achieves a success rate of 32%. Our method is also orders of magnitude more sample efficient. 
+      </div>
+      <br><hr>
+
+      <center><h1>Zero-shot Generalization</h1></center>
+      <div style="width:800px; margin:0 auto; text-align=center">
+        We show zero-shot generalization to different block configurations and block cardinalities. Our system can stack blocks 
+        into taller towers, multiple towers and pyramids without additional training. While these results are exciting, 
+        we acknowledge there is substantial room for improving the zero-shot results.   
+      </div><br/>
+      <table align=center width=1000px>
+        <p style="margin-top:4px;"></p>
+        <tr><td width=1200px>
+          <center><a href="resources/generalization.png"><img src = "resources/generalization.png" height="500px"></img></a><br></center>
+        </td></tr>
+      </table>
+
+            <br/><hr>
+
+      <center><h1>Emergent Behaviors</h1></center>
+      <div style="width:940; height:280; margin:0 auto; text-align=center">
+
+              1. <video width="280" height="280" controls>
+  <source src="resources/videos/singulation.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video> &nbsp;
+
+      2. <video width="280" height="280" controls>
+  <source src="resources/videos/pushing.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+
+              3. <video width="280" height="280" controls>
+  <source src="resources/videos/pick2place2.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video> &nbsp;
+
+            </div>
+
+      <div style="width:800px; margin:0 auto; text-align=center">
+        <ol>
+  <li> <b>Singulation:</b> (0:02) In order to not knock over the tower, the agent singulates the final black block before picking and placing it. 
+  </li>
+  
+  <li><b>Pushing while grasping:</b> (0:03) The agent performs a rolling/pushing behavior on the green block while grasping the blue block.
+  </li>
+  
+  <li><b>Pick 2, place 2:</b> (0:03) The agent collects the blue and yellow blocks in hand before placing each one by one.
+  </li>
+</ol>
+      </div>
+
+
+      <br/><hr>
+
+      <center><h1>Failure Modes</h1></center>
+      <div style="width:620; height:580px; margin:0 auto; text-align=center">
+
+              1. <video width="280" height="280" controls>
+  <source src="resources/failure_videos/stack6->stack7/Oscillation/openaigym.video.0.8643.video000079.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video> &nbsp;
+
+      2. <video width="280" height="280" controls>
+  <source src="resources/failure_videos/stack6->stack7/No Time to Recover/openaigym.video.0.8643.video000042.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+
+              3. <video width="280" height="280" controls>
+  <source src="resources/failure_videos/stack6->stack6/Blocks Fall Off - Before Stacked/openaigym.video.0.2340.video000043.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video> &nbsp;
+
+      4. <video width="280" height="280" controls>
+  <source src="resources/failure_videos/stack6->stack6/Blocks Fall Off - After Stacked/openaigym.video.0.2340.video000064.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+            </div>
+
+
+      <div style="width:800px; margin:0 auto; text-align=center">
+        <ol>
+  <li> <b>Oscillation:</b> The agent oscillates its end-effector without progressing towards the goal. 
+    Often, this happens when the target block is very close to the base of the tower. In this scenario, 
+    picking up the block risks toppling the tower. We hypothesize that in order to reduce this risk, the agent 
+    simply oscillates its end-effector. 
+  </li>
+  
+  <li><b>Insufficient recovery time:</b> After 6 blocks have been stacked into a tower, the tower topples. 
+    The agent restarts stacking but is unable to stack all the blocks within the maximum time length of the episode. 
+  </li>
+  
+  <li><b>Blocks fall off during stacking:</b> While stacking a tower of 6 blocks, the agent knocks one or more blocks off the table. 
+    Because the blocks are no longer on the table, the agent does not succeed. 
+  </li>
+  
+   <li><b>Blocks fall off after stacking:</b> 
+     The agent succeeds in stacking a tower of 6 blocks, but the tower topples and block(s) fall off the table.  
+   </li>
+</ol>
+      </div>
+    <br/><hr>
+
+
+      <center id="sourceCode"><h1>Source Code and Environment</h1></center>
+      <div style="width:800px; margin:0 auto; text-align=center">
+      We have released the PyTorch based implementation and environment on the Github page. Try our code!
+      </div>
+      <table align=center width=900px>
+        <tr>
+          <!-- <p style="margin-top:4px;"></p> -->
+          <td width=300px align=center>
+            <span style="font-size:28px"><a href='https://github.com/richardrl/rlkit-relational'>[GitHub]</a></span>
+          </td>
+        </tr>
+      </table>
+      <br><hr>
+
+      <table align=center width=850px>
+        <center><h1>Paper and Bibtex</h1></center>
+        <tr>
+        <td width=250px align=left>
+        <!-- <p style="margin-top:4px;"></p> -->
+        <a href="resources/assemblies.pdf"><img style="height:150px" src="resources/ICRA_PAPER_RICHARD.pdf.jpg"/></a>
+        <center>
+        <span style="font-size:20pt"><a href="https://arxiv.org/pdf/1912.11032.pdf">[Paper]</a>&nbsp;
+        <span style="font-size:20pt"><a href="https://arxiv.org/pdf/1912.11032.pdf">[ArXiv]</a>
+        </center>
+        </td>
+        <td width=50px align=center>
+        </td>
+        <td width=550px align=left>
+        <!-- <p style="margin-top:4px;"></p> -->
+        <p style="text-align:left;"><b><span style="font-size:20pt">Citation</span></b><br/><span style="font-size:6px;">&nbsp;<br/></span> <span style="font-size:15pt">Richard Li, Allan Jabri, Trevor Darrell, Pulkit Agrawal. <b>Towards Practical Multi-object Manipulation using Relational Reinforcement Learning.<br/></b> In <i>ICRA</i> 2020.</span></p>
+        <!-- <p style="margin-top:20px;"></p> -->
+        <span style="font-size:20pt"><a shape="rect" href="javascript:togglebib('relationalrl19_bib')" class="togglebib">[Bibtex]</a></span>
+        </td>
+        </tr>
+        <tr>
+        <td width=250px align=left>
+        </td>
+        <td width=50px align=center>
+        </td>
+        <td width=550px align=left>
+
+          <div class="paper" id="relationalrl19_bib">
+<pre xml:space="preserve">
+@inproceedings{li19relationalrl,
+  Author = {Li, Richard and
+  Jabri, Allan and Darrell, Trevor and Agrawal, Pulkit},
+  Title = {Towards Practical Multi-object Manipulation using Relational Reinforcement Learning},
+  Booktitle = {arXiv preprint arXiv:XXXX},
+  Year = {2019}
+}</pre>
+          </div>
+          </td>
           </tr>
-        </tbody></table>
-      </td>
-    </tr>
-  </table>
+      </table>
+    <br><hr>
+
+<!--     <table align=center width=800px>
+      <tr><td width=800px><left> -->
+      <div style="width:800px; margin:0 auto; text-align: left">
+      <center><h1>Acknowledgements</h1></center>
+      We acknowledge support from US Department of Defense, DARPA's Machine Common Sense Grant and the BAIR and BDD industrial consortia.
+      We thank Amazon Web Services (AWS) for their generous support in the form of cloud credits.  
+      We'd like to thank Vitchyr Pong, Kristian Hartikainen, Ashvin Nair and other members of the BAIR lab and the Improbable AI lab 
+      for helpful discussions during this project. <a href="https://people.eecs.berkeley.edu/~pathak/">Template credit</a>. 
+<!--       </left></td></tr>
+    </table> -->
+  <br><br>
+<script xml:space="preserve" language="JavaScript">
+hideallbibs();
+</script>
 </body>
-
 </html>
