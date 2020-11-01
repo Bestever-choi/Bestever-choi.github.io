@@ -208,16 +208,23 @@
       </table> -->
       <div class="table-like" style="justify-content:space-evenly;max-width:800px;margin:auto;padding:5px">
         <div><center><span style="font-size:24px"><a href="https://bestever-choi.github.io/ANYmal-recovery/data/FinalReport.pdf">&nbsp;&nbsp;&nbsp;[Report]</a></span></center></div>
-        <div><center><span style="font-size:24px"><a href='https://bestever-choi.github.io/ANYmal-recovery/data/RSL Presentation Kyoungyeon_Final.pdf'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Presentation]</a></span></center> </div>
+        <div><center><span style="font-size:24px"><a href='https://bestever-choi.github.io/ANYmal-recovery/data/RSL Presentation Kyoungyeon_Final.pdf'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Presentation]</a></span></center> </div>
         <div><center><span style="font-size:24px"><a href="https://youtu.be/yt3woILwwhY" target="_blank">[Video]</a></span></center> </div>
       </div>
 
-      <center>
-      <iframe style="border: 3px solid #EEE;" width="768" height="432" max-width="100%" src="https://youtu.be/yt3woILwwhY" frameborder="0" allowfullscreen></iframe></center>
       <br>
 
       <div style="width:800px; margin:0 auto; text-align=right;">
-        Reinforcement learning is typically concerned with learning control policies tailored to a particular agent. We investigate whether there exists a single global policy that can generalize to control a wide variety of agent morphologies -- ones in which even dimensionality of state and action spaces changes. We propose to express this global policy as a collection of <i>identical</i> modular neural networks, dubbed as Shared Modular Policies (SMP), that correspond to each of the agent's actuators. Every module is only responsible for controlling its corresponding actuator and receives information from only its local sensors. In addition, messages are passed between modules, propagating information between distant modules. We show that a single modular policy can successfully generate locomotion behaviors for several planar agents with different skeletal structures such as monopod hoppers, quadrupeds, bipeds, and generalize to variants not seen during training -- a process that would normally require training and manual hyperparameter tuning for each morphology. We observe that a wide variety of drastically diverse locomotion styles across morphologies as well as centralized coordination emerges via message passing between decentralized modules purely from the reinforcement learning objective.
+      The contributions of this project can be divided into 4 parts. 1) Design of a recovery controller on sloped terrain. We train the recovery policy using PPO(Proximal
+      Policy Optimization) on sloped terrain with randomized properties(slope, friction
+      coecient). 2) Terrain normal vector estimation. For stable behaviors, we find that
+      terrain normal observation is crucial during recovery on sloped terrain. Therefore,
+      a terrain normal estimator is trained using deep neural network. 3) Design of a
+      standing up controller on sloped terrain. After recovery, the robot has to stand up
+      to walk and perform various tasks. With di↵erent reward function from the recovery controller, we train a standing up policy. 4) Finite state machine. Finite state
+      machine that enables hybrid control of the two previous policy(recovery, standing
+      up) is designed by transition rules based on state errors. The policy is tested on
+      the quadrupedal robot ANYmal in both simulated and physical environments.
       </div>
       <br><hr>
 
@@ -226,7 +233,8 @@
         This work takes a step beyond the laborious training process of the conventional single-agent RL policy by tackling the possibility of learning general-purpose controllers for diverse robotic systems. Our approach leverages the compositional graph neural networks and trains a single policy for a wide variety of agents which can then generalize to unseen agent shapes at test-time without any further training.
       </div>
       <table align="center" width="800px"><tbody><tr><td width="800px">
-      <center><a href="data/mergeNorm1.gif"><img src = "data/mergeNorm1.gif" width="600px" ></img></a><br></center>
+      <center><a href="data/mergeNorm1.gif"><img src = "data/mergeNorm1.gif" width="300px" ></img></a><br></center>
+       <center><a href="data/mergeNorm1.gif"><img src = "data/mergeNorm2.gif" width="300px" ></img></a><br></center>
       </td></tr></tbody></table>
       <hr>
 
