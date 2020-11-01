@@ -215,29 +215,13 @@
       <br>
 
       <div style="width:800px; margin:0 auto; text-align=right;">
-      Legged robots have promising capabilities of traversing and performing tasks in
-      challenging environments. However, unexpected disturbances can easily lead the
-      robot to fall in such harsh environments. Therefore, it is essential to recover from
-      a fall in various terrains and stabilize itself. There are existing model-based control
-      methods for recovery, but they are based on analytical models and often require
-      predefined contact points that are difficult to optimize. Even on simple flat terrain environments, it is almost impossible to model all the contact sequences and
-      the interactions with the ground. To deal with the complexity of the task, we use modelfree Deep Reinforcement Learning to obtain a robust recovery controller on various
-      terrains. We trained the policy in simulated environments and transferred it to real systems. 
+      Legged robots have promising capabilities of traversing and performing tasks in challenging environments. However, unexpected disturbances can easily lead the robot to fall in such harsh environments. Therefore, it is essential to recover from a fall in various terrains and stabilize itself. There are existing model-based control methods for recovery, but they are based on analytical models and often require predefined contact points that are difficult to optimize. Even on simple flat terrain environments, it is almost impossible to model all the contact sequences and the interactions with the ground. To deal with the complexity of the task, we use modelfree Deep Reinforcement Learning to obtain a robust recovery controller on various terrains. We trained the policy in simulated environments and transferred it to real systems. 
       </div>
       <br><hr>
 
       <center><h1>ANYmal recovery on sloped terrains</h1></center>
       <div style="width:800px; margin:0 auto; text-align=right">
-      The contributions of this project can be divided into 4 parts. 1) Design of a recovery controller on sloped terrain. We train the recovery policy using PPO(Proximal
-      Policy Optimization) on sloped terrain with randomized properties(slope, friction
-      coecient). 2) Terrain normal vector estimation. For stable behaviors, we find that
-      terrain normal observation is crucial during recovery on sloped terrain. Therefore,
-      a terrain normal estimator is trained using deep neural network. 3) Design of a
-      standing up controller on sloped terrain. After recovery, the robot has to stand up
-      to walk and perform various tasks. With di↵erent reward function from the recovery controller, we train a standing up policy. 4) Finite state machine. Finite state
-      machine that enables hybrid control of the two previous policy(recovery, standing
-      up) is designed by transition rules based on state errors. The policy is tested on
-      the quadrupedal robot ANYmal in both simulated and physical environments.
+      The contributions of this project can be divided into 4 parts. 1) Design of a recovery controller on sloped terrain. We train the recovery policy using PPO(Proximal Policy Optimization) on sloped terrain with randomized properties(slope, friction coefficient). 2) Terrain normal vector estimation. For stable behaviors, we find that terrain normal observation is crucial during recovery on sloped terrain. Therefore, a terrain normal estimator is trained using deep neural network. 3) Design of a standing up controller on sloped terrain. After recovery, the robot has to stand up to walk and perform various tasks. With different reward function from the recovery controller, we train a standing up policy. 4) Finite state machine. Finite state machine that enables hybrid control of the two previous policies(recovery, standing up) is designed by transition rules based on state errors. The policy is tested on the quadrupedal robot ANYmal in both simulated and physical environments.
       </div>
  
         <table align=center width=1000px>
