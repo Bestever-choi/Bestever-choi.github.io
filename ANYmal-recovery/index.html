@@ -196,6 +196,8 @@ function seek(sec){
       <center><h1>ANYmal recovery on sloped terrains</h1></center>
       <div style="width:800px; margin:0 auto; text-align=center">
       The contributions of this project can be divided into 4 parts. 1) Design of a recovery controller on sloped terrain. We train the recovery policy using PPO(Proximal Policy Optimization) on sloped terrain with randomized properties(slope, friction coefficient). 2) Terrain normal vector estimation. For stable behaviors, we find that terrain normal observation is crucial during recovery on sloped terrain. Therefore, a terrain normal estimator is trained using deep neural network. 3) Design of a standing up controller on sloped terrain. After recovery, the robot has to stand up to walk and perform various tasks. With different reward function from the recovery controller, we train a standing up policy. 4) Finite state machine. Finite state machine that enables hybrid control of the two previous policies(recovery, standing up) is designed by transition rules based on state errors. The policy is tested on the quadrupedal robot ANYmal in both simulated and physical environments.
+      <br>
+      The red and green arrows respectively indicate the direction of an estimated and ground truth terrain normal vector. The policy was tested on both ANYmal B and C.
       </div><br/>
       <table align=center width=1000px>
         <p style="margin-top:4px;"></p>
@@ -230,8 +232,8 @@ function seek(sec){
       </div><br/>
       <table align=center width=1000px>
         <p style="margin-top:4px;"></p>
-        <tr><td width=200px>
-          <center><img src = "data/overview.png" height="150px"></img></a><br></center>
+        <tr><td width=500px>
+          <center><img src = "data/overview.png" height="300px"></img></a><br></center>
         </td></tr>
       </table>
 
