@@ -1,0 +1,214 @@
+<!DOCTYPE HTML>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <title>Kyoungyeon Choi</title>
+  
+  <meta name="author" content="Kyoungyeon Choi">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
+  <link rel="icon" type="image/png" href="images/seal_icon.png">
+</head>
+
+<body>
+  <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+    <tr style="padding:0px">
+      <td style="padding:0px">
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr style="padding:0px">
+            <td style="padding:2.5%;width:63%;vertical-align:middle">
+              <p style="text-align:center">
+                <name>Kyoungyeon Choi</name>
+              </p>
+              <p>I was a robotics research engineer at <a href="https://www.naverlabs.com/">NAVER LABS</a>, where I conducted research on model-based offline RL for dynamic robotic manipulation using haptic play data.
+                <br> 
+                <br> 
+                I earned my bachelor's degree from Seoul National University (SNU, South Korea) in February 2021, majoring in Mechanical Engineering. I worked under the supervision of <a href="https://ieeexplore.ieee.org/author/37355607600">Prof. Frank Chongwoo Park</a> on robotic manipulation. 
+                <br> 
+                <br> 
+                Also, I was an exchange student at the Department of Mechanical Engineering, ETH Zurich. At ETH, I worked in <a href="https://rsl.ethz.ch/">Robotic Systems Lab</a> advised by <a href="https://rsl.ethz.ch/the-lab/people/person-detail.html?persid=121911">Prof. Marco Hutter.</a>
+                 My research interest lies in robotics, control, robotic manipulation, legged robotics.
+              </p>
+              <p style="text-align:center">
+                <a href="mailto:kenbaxter1221@gmail.com">Email</a> &nbsp/&nbsp
+                <a href="data/CV.pdf">CV</a> &nbsp/&nbsp
+                <a href="https://scholar.google.com/citations?hl=en&user=o3gRfSUAAAAJ&view_op=list_works&gmla=AJsN-F6MS7CsPZJpD2vsmjxwhowfFLVsGDGmIs7_5YzFuBd5U4n-VIT4tTcbYAL4jfzm6O5bMnY3wNS2nOZhgFkS3pfTHV750RQsiIoTa1dCwekSys-JHs4">Google Scholar</a>
+              </p>
+            </td>
+            <td style="padding:2.5%;width:50%;max-width:50%">
+              <a href="images/SteinwayChristmas.jpg"><img style="width:75%;max-width:75%" alt="profile photo" src="images/SteinwayChristmas.jpg" class="hoverZoomLink"></a>
+            </td>
+          </tr>
+        </tbody></table>
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr>
+            <td style="padding:20px;width:100%;vertical-align:middle">
+              <heading>Research</heading>
+            </td>
+          </tr>
+        </tbody></table>
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          
+          <tr>
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <img src="ANYmal-recovery/data/offlineRL.gif"  width="160" height="100">
+            </td>
+            <td width="75%" valign="middle">
+                <papertitle>Learning Dynamic Manipulation Skills from Haptic-Play</papertitle>
+              </a>
+              <br>
+              <strong>Kyoungyeon Choi</strong>
+              <br>
+              Joint work with Taeyoon Lee, Donghyun Sung, Choongin Lee, Changwoo Park and Keunjun Choi during <a href="https://www.naverlabs.com/">NAVER LABS</a> internship.
+              <br>
+              Submitted to IEEE Robotics and Automation Letters(RA-L) and IROS 2022.
+              <br>
+              Presented at <a href="https://europe.naverlabs.com/research/2nd-ai-for-robotics-international-workshop-by-naver-labs-europe/">2nd NAVER LABS Europe International Workshop on AI for Robotics</a> 
+              <br>
+              <a href="ANYmal-recovery/data/sledfinal.pdf">[slide]</a> <a href=https://www.youtube.com/watch?v=kcFiNNJwpXs>[video]</a>
+              <br>
+              <p>
+                Proposed a practical data-driven skill learning approach to solve highly dynamic manipulation
+                tasks entirely from offline teleoperated play data. By learning the state conditional latent skill distribution and skill conditional state transition dynamics, it allows model-based planning in the learned skill-space to
+                accomplish any given downstream tasks at test time. 
+              </p>
+            </td>
+          </tr>
+    
+          <tr>
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <img src="images/grasp.gif"  width="160" height="100">
+            </td>
+            <td width="75%" valign="middle">
+                <papertitle>Learning 6-dof grasping from partial point cloud embedding</papertitle>
+              </a>
+              <br>
+              <strong>Kyoungyeon Choi</strong>
+              <br>
+              Advisor: <a href="https://scholar.google.co.kr/citations?user=u-h3PJIAAAAJ&hl=en">Prof. Frank Chongwoo Park</a>
+              <br>
+              <p>
+               Trained a grasping policy that selects a successful grasp pose from a <a href="https://arxiv.org/abs/1905.10520">VAE grasp generator</a> by learning point cloud embedding and offset actions. 
+               The policy learns to output a latent action that encodes the desired SE(3) of a gripper utilizing an antipodal cost and soft actor-critic algorithm.
+              </p>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <img src="images/deploy1.gif"  width="160" height="100">
+            </td>
+            <td width="75%" valign="middle">
+              <a href="https://bestever-choi.github.io/ANYmal-recovery/">
+                <papertitle>Recovery controller for ANYmal on various terrains</papertitle>
+              </a>
+              <br>
+              <strong>Kyoungyeon Choi</strong>
+              <br>
+              Advisor: <a href="https://scholar.google.co.kr/citations?user=DO3quJYAAAAJ&hl=ko">Prof. Marco Hutter</a>
+              <br>
+              <a href="https://bestever-choi.github.io/ANYmal-recovery/">project page</a>
+              <br>
+              <p>
+                  Developed a recovery controller for quadruped robot ”ANYmal”, enabling the robot to recover and stand up on sloped terrains.
+                  Applying terrain randomization, normal-estimation, and cost function design, ANYmal learned to recover from arbitrary configurations on challenging terrains only with proprioceptive measurements. 
+           
+              </p>
+              
+            </td>
+          </tr>
+          
+          <tr>
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <img src="images/3core1.png" width="160" height="100">
+            </td>
+            <td width="75%" valign="middle">
+              <a href="data/TMF.pdf">
+                <papertitle>Two-mode Fiber with a Reduced Mode Overlap for Uncoupled Mode-division Multiplexing in C+L Band</papertitle>
+              </a>
+              <br>
+              Seongjin Hong,
+              <strong>Kyoungyeon Choi</strong>,
+              Yong Soo Lee,
+              <a href="https://allwise.yonsei.ac.kr/pdpl/subdir/professor/professor1.htm">Kyunghwan Oh</a>
+              <br>
+              <em>Current Optics and Photonics</em>, Vol.2,Issue.3,June25,2018
+              <br>
+              Advisor: <a href="https://scholar.google.co.kr/citations?user=ciyqo8EAAAAJ&hl=en">Prof. Kyunghwan Oh</a>
+              <br>
+              <p>Designed a novel three-layered core fiber optic cable that reduces mode overlap by two folds in Two-mode Fiber.</p>
+            </td>
+          </tr>
+          
+        </tbody></table>
+
+        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20"><tbody>
+          <tr>
+            <td>
+              <heading>Course Projects</heading>
+            </td>
+          </tr>
+        </tbody></table>
+         
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          
+          <tr>
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <center><img src="images/sigma.PNG" width="100" height="100"></center>
+            </td>
+            <td width="75%" valign="middle">
+                <papertitle>Footsteps noise warning device</papertitle>
+              </a>
+              <br>
+              Sigma Intelligence, SNU
+              <br>
+              <p>Developed a footsteps noise warning device using Piezoelectric sensor, Strip LED, Arduino, and ROS. The device emits LED lights proportional to the intensity of the noise when a person is climbing stairs.</p>
+            </td>
+          </tr>
+    
+          <tr>
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <img src="images/plane.png" width="160" height="100">
+            </td>
+            <td width="75%" valign="middle">
+                <papertitle>Design of a RC plane</papertitle>
+              </a>
+              <br>
+              Creative Engineering Design course
+              <br>
+              <p>Designed and manufactured a RC plane using Depron, FRP, carbon rod. The plane completed 4 missions:Take off, Flight to target location, 360 degree rotation, Landing.</p>
+            </td>
+          </tr>
+          
+          <tr>
+            <td style="padding:20px;width:25%;vertical-align:middle">
+              <img src="images/gear.PNG" width="160" height="100">
+            </td>
+            <td width="75%" valign="middle">
+                <papertitle>Design of mechanical logic gates with spur gears</papertitle>
+              </a>
+              <br>
+              Digital Computer Concept and Practice course
+              <br>
+              <p>Designed and implemented boolean gates with spur gears</p>
+            </td>
+          </tr>
+        </tbody></table>
+        
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+            <td style="padding:0px">
+              <br>
+              <p style="text-align:right;font-size:small;">
+              <a href="https://github.com/jonbarron/jonbarron_website">Template</a>
+                <br>
+              </p>
+            </td>
+          </tr>
+        </tbody></table>
+      </td>
+    </tr>
+  </table>
+</body>
+
+</html>
